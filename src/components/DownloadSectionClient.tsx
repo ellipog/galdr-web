@@ -95,17 +95,6 @@ export default function DownloadSectionClient({
           </motion.div>
         ))}
       </motion.div>
-      <div className={styles.pkgHints}>
-        <p className={styles.pkgLine}>
-          {">"} winget install galdr{"  "}# Windows (coming soon)
-        </p>
-        <p className={styles.pkgLine}>
-          {">"} brew install galdr{"  "}# macOS (coming soon)
-        </p>
-        <p className={styles.pkgLine}>
-          {">"} sudo apt install galdr{"  "}# Linux (coming soon)
-        </p>
-      </div>
     </motion.section>
   );
 }

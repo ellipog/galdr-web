@@ -104,9 +104,6 @@ export default function HeroSection({ version }: Props) {
       </div>
       <div className={styles.actions}>
         <Button href="#download">ᚷ DOWNLOAD</Button>
-        {version && (
-          <span className={styles.versionBadge}>v{version}</span>
-        )}
         <a
           href="https://github.com/ellipog/galdr"
           target="_blank"
