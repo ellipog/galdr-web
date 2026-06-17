@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, useScroll } from "framer-motion";
+import { useState, useEffect } from "react";
 import ScrambleText from "./ScrambleText";
 import Button from "./Button";
 import Divider from "./Divider";
@@ -8,24 +9,42 @@ import styles from "./HeroSection.module.css";
 
 const ASCII_MOCKUP = [
   "┌─────────────────────────────────┐",
-  "│  ᚷᚨᛚᛞᚱ                         _ □ X │",
+  "│  ᚷᚨᛚᛞᚱ                     _ □ X │",
   "├─────────────────────────────────┤",
   "│                                 │",
   "│   INPUT    input.mp4            │",
-  "│   FORMAT   [ WebM ]               │",
+  "│   FORMAT   [ WebM  ⌄ ]           │",
   "│   QUALITY  ████████░░░ 73%      │",
   "│   ─────────────────────────     │",
   "│   > ffmpeg -i input.mp4 ...     │",
-  "│   ᚲ casting web | ██████ 67%         │",
+  "│   ᚲ casting web | ██████ 67%         │",
   "│                                 │",
   "└─────────────────────────────────┘",
 ];
 
 const RUNIC_ALPHABET = "ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ ᚷ ᚹ ᚺ ᚾ ᛁ ᛃ ᛇ ᛈ ᛉ ᛊ ᛏ ᛒ ᛖ ᛗ ᛚ ᛝ ᛟ ᛞ";
-const TAGLINE_CHARS = "media incantations".split("");
 
-export default function HeroSection() {
+interface Props {
+  version?: string;
+}
+
+export default function HeroSection({ version }: Props) {
   const reduced = useReducedMotion();
+  const { scrollY } = useScroll();
+  const [hintHidden, setHintHidden] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = scrollY.on("change", (y) => {
+      if (y > window.innerHeight * 0.8) setHintHidden(true);
+    });
+    return () => unsubscribe();
+  }, [scrollY]);
+
+  const scrollHint = (
+    <p className={styles.scrollHint} aria-hidden="true">
+      ᚨ scroll down
+    </p>
+  );
 
   if (reduced) {
     return (
@@ -44,6 +63,9 @@ export default function HeroSection() {
         </div>
         <div className={styles.actions}>
           <Button href="#download">ᚷ DOWNLOAD</Button>
+          {version && (
+            <span className={styles.versionBadge}>v{version}</span>
+          )}
           <a
             href="https://github.com/ellipog/galdr"
             target="_blank"
@@ -54,9 +76,7 @@ export default function HeroSection() {
           </a>
         </div>
         <Divider />
-        <p className={styles.scrollHint} aria-hidden="true">
-          ᚨ scroll down
-        </p>
+        {!hintHidden && scrollHint}
       </section>
     );
   }
@@ -84,6 +104,9 @@ export default function HeroSection() {
       </div>
       <div className={styles.actions}>
         <Button href="#download">ᚷ DOWNLOAD</Button>
+        {version && (
+          <span className={styles.versionBadge}>v{version}</span>
+        )}
         <a
           href="https://github.com/ellipog/galdr"
           target="_blank"
@@ -94,15 +117,7 @@ export default function HeroSection() {
         </a>
       </div>
       <Divider />
-      <motion.p
-        className={styles.scrollHint}
-        aria-hidden="true"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: [0.3, 1, 0.3] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        ᚨ scroll down
-      </motion.p>
+      {!hintHidden && scrollHint}
     </section>
   );
 }

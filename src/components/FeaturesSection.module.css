@@ -20,6 +20,7 @@
 .card {
   background: var(--bg-dim);
   border: var(--border);
+  border-left: 2px solid var(--fg-dim);
   padding: 24px;
   display: flex;
   flex-direction: column;

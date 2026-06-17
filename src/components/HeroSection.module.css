@@ -68,6 +68,16 @@
   letter-spacing: 0.1em;
 }
 
+.versionBadge {
+  font-size: 12px;
+  color: var(--fg-dim);
+  border: 1px solid var(--fg-faint);
+  padding: 4px 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1;
+}
+
 .scrollHint {
   font-size: 12px;
   color: var(--fg-dim);

@@ -6,17 +6,21 @@ import DownloadSection from "@/components/DownloadSection";
 import FooterSection from "@/components/FooterSection";
 import StickyNav from "@/components/StickyNav";
 import BackToTop from "@/components/BackToTop";
+import { getRelease } from "@/lib/github";
 
-export default function Home() {
+export default async function Home() {
+  const release = await getRelease();
+  const version = release?.tag_name?.replace(/^v/i, "");
+
   return (
     <>
       <StickyNav />
       <main id="main">
-        <HeroSection />
+        <HeroSection version={version} />
         <AboutSection />
         <FeaturesSection />
         <AlchemySection />
-        <DownloadSection />
+        <DownloadSection release={release} />
         <FooterSection />
       </main>
       <BackToTop />

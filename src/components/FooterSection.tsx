@@ -42,7 +42,7 @@ export default function FooterSection() {
         </p>
       </div>
       <p className={styles.copyright}>
-        &copy; 2026 Ellio. All rights reserved.
+        &copy; 2026 Elliot. All rights reserved.
       </p>
     </motion.footer>
   );
