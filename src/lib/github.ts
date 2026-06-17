@@ -12,7 +12,9 @@ export interface Release {
 
 export async function getRelease(): Promise<Release | null> {
   try {
-    const headers: Record<string, string> = {};
+    const headers: Record<string, string> = {
+      Accept: "application/vnd.github.v3+json",
+    };
     const token = process.env.GITHUB_TOKEN;
     if (token) {
       headers.Authorization = `Bearer ${token}`;
@@ -20,11 +22,15 @@ export async function getRelease(): Promise<Release | null> {
 
     const res = await fetch(
       "https://api.github.com/repos/ellipog/galdr/releases/latest",
-      { headers, cache: "no-store" }
+      { headers, next: { revalidate: 3600 } }
     );
-    if (!res.ok) return null;
+    if (!res.ok) {
+      console.error("GitHub API returned", res.status, await res.text().catch(() => ""));
+      return null;
+    }
     return res.json();
-  } catch {
+  } catch (e) {
+    console.error("GitHub API fetch failed:", e);
     return null;
   }
 }
