@@ -1,0 +1,105 @@
+:root {
+  --bg: #000000;
+  --fg: #c8c8c8;
+  --bg-dim: #111111;
+  --fg-dim: #6a6a6a;
+  --fg-faint: #262626;
+  --accent: #c8c8c8;
+  --font-mono: "Courier New", "Liberation Mono", "Nimbus Mono PS", "Source Code Pro", monospace;
+  --base-unit: 4px;
+  --content-max: 800px;
+  --border: 1px solid var(--fg-faint);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-mono);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.015) 2px,
+    rgba(255, 255, 255, 0.015) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+a {
+  color: var(--fg);
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 1px solid var(--fg);
+  outline-offset: 2px;
+}
+
+button {
+  font-family: var(--font-mono);
+  cursor: pointer;
+}
+
+button:focus-visible {
+  outline: 1px solid var(--fg);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 8px;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 8px 16px;
+  z-index: 10000;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.skip-link:focus {
+  top: 8px;
+}
