@@ -1,23 +1,39 @@
 import DownloadSectionClient from "./DownloadSectionClient";
-import { matchAsset, type Release } from "@/lib/github";
+import { type Release } from "@/lib/github";
 
 interface Props {
   release: Release | null;
 }
 
 function getPlatforms(release: Release) {
+  const version = release.tag_name.replace(/^v/i, "");
+  
+  // Helper to find best asset: prioritize version match, then pattern match
+  const findBestAsset = (patterns: string[]) => {
+    const matches = release.assets.filter((a) =>
+      patterns.some((p) => a.name.toLowerCase().includes(p))
+    );
+    
+    // 1. Try to find asset containing version string
+    const versionMatch = matches.find((a) => a.name.includes(version));
+    if (versionMatch) return versionMatch;
+    
+    // 2. Otherwise return the first match (or sort by name descending to get newest)
+    return matches.sort((a, b) => b.name.localeCompare(a.name))[0];
+  };
+
   return [
     {
       os: "Windows",
-      asset: matchAsset(release.assets, [".msi", "-setup.exe"]),
+      asset: findBestAsset([".msi", "-setup.exe"]),
     },
     {
       os: "macOS",
-      asset: matchAsset(release.assets, [".dmg"]),
+      asset: findBestAsset([".dmg"]),
     },
     {
       os: "Linux",
-      asset: matchAsset(release.assets, [".appimage", ".deb"]),
+      asset: findBestAsset([".appimage", ".deb"]),
     },
   ];
 }
