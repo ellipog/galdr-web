@@ -6,6 +6,7 @@ import styles from "./StickyNav.module.css";
 const LINKS = [
   { label: "ABOUT", href: "#about" },
   { label: "SPELLS", href: "#spells" },
+  { label: "FORGE", href: "#forge" },
   { label: "DOWNLOAD", href: "#download" },
 ];
 

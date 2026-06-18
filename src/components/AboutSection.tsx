@@ -47,6 +47,9 @@ export default function AboutSection() {
           <p className={styles.terminalLine}>
             {">"} Free and open source
           </p>
+          <p className={styles.terminalLine}>
+            {">"} Native .galdr project file format
+          </p>
         </div>
       </div>
     </motion.section>

@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import FeaturesSection from "@/components/FeaturesSection";
+import ForgeSection from "@/components/ForgeSection";
 import AlchemySection from "@/components/AlchemySection";
 import DownloadSection from "@/components/DownloadSection";
 import FooterSection from "@/components/FooterSection";
@@ -19,6 +20,7 @@ export default async function Home() {
         <HeroSection version={version} />
         <AboutSection />
         <FeaturesSection />
+        <ForgeSection />
         <AlchemySection />
         <DownloadSection release={release} />
         <FooterSection />

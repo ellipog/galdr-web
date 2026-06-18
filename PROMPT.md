@@ -350,7 +350,19 @@ The mockup is wrapped in a `motion.div` with a slow ambient pulse. The bottom li
 
 Each card heading uses a small ScrambleText with `hover={true}` (scramble on mouse enter).
 
-### 5. Command Alchemy section (`id="alchemy"`)
+### 5. Forge section (`id="forge"`)
+
+- `motion.section` with `whileInView` fade-in
+- ScrambleText heading: `ScrambleText text="ᚹ FORGE" as="h2" trigger={inView} />`
+- A terminal-style card (bg-dim, border, padding 24px) with:
+  - Description of the non-linear video editor
+  - Note about `.galdr` project file format
+  - Rune-bulleted feature list: drag-and-drop timeline, trim/split, speed adjustment, export to MP4/MKV, `.galdr` project files
+- Below the card, a CSS timeline visualization (no ASCII art):
+  - Two track bars (VIDEO and AUDIO) rendered as styled divs with clip segments and gaps
+  - Time labels underneath (00:00, 00:10, 00:20, 00:30, 00:40)
+
+### 6. Command Alchemy section (`id="alchemy"`)
 
 - `motion.section` with `whileInView` fade-in
 - ScrambleText heading: `ScrambleText text="ᚲ COMMAND ALCHEMY" as="h2" trigger={inView} />`
@@ -364,7 +376,7 @@ Each card heading uses a small ScrambleText with `hover={true}` (scramble on mou
   ```
 - The code line is a terminal-block inset (bg even darker, or just padding with a faint left border)
 
-### 6. Download section (`id="download"`)
+### 7. Download section (`id="download"`)
 
 This section fetches the latest GitHub release data at build time and renders real download buttons.
 
@@ -411,7 +423,7 @@ Filter assets by filename to assign to OS cards:
   > sudo apt install galdr      # Linux (coming soon)
   ```
 
-### 7. Footer (`id="colophon"`)
+### 8. Footer (`id="colophon"`)
 
 - `motion.footer` with `whileInView` fade-in
 - Horizontal rule of repeated `ᛟ` characters
@@ -432,7 +444,7 @@ Filter assets by filename to assign to OS cards:
 
 A thin fixed bar at the top of the viewport, visible after scrolling past the hero. Background var(--bg), border-bottom 1px solid var(--fg-faint). Contains:
 - Left: "galdr" in all-caps (letter-spacing 0.15em, fg-dim — not a link, just a label)
-- Right: anchor links in all-caps — `ABOUT`, `SPELLS`, `DOWNLOAD` (underline on hover)
+- Right: anchor links in all-caps — `ABOUT`, `SPELLS`, `FORGE`, `DOWNLOAD` (underline on hover)
 
 The nav scrolls away with the page (not sticky, or sticky with low z-index). If sticking to sticky, make sure it doesn't overlap hero content on initial load. A simpler approach: show it only after scrolling past the hero, using Framer Motion `useScroll` / `useTransform` to fade it in.
 
@@ -522,14 +534,15 @@ galdr-web/
       HeroSection.tsx        + HeroSection.module.css
       AboutSection.tsx       + AboutSection.module.css
       FeaturesSection.tsx    + FeaturesSection.module.css
+      ForgeSection.tsx       + ForgeSection.module.css    -- video editor section
       AlchemySection.tsx     + AlchemySection.module.css
       DownloadSection.tsx    + DownloadSection.module.css
       FooterSection.tsx      + FooterSection.module.css
       ScrambleText.tsx       + ScrambleText.module.css  -- component as provided above
       Button.tsx             + Button.module.css         -- motion.button wrapper
       Divider.tsx            + Divider.module.css         -- rune repeated HR
-      StickyNav.tsx          + StickyNav.module.css       -- optional thin top nav
-      BackToTop.tsx          + BackToTop.module.css       -- optional ᛏ button
+      StickyNav.tsx          + StickyNav.module.css       -- thin top nav with FORGE anchor
+      BackToTop.tsx          + BackToTop.module.css       -- ᛏ button
 ```
 
 ---
