@@ -24,7 +24,6 @@ const FEATURES = [
   {
     rune: "ᚨ",
     heading: "INSPECT",
-    badge: "COMING SOON",
     description:
       "Deep media inspection via ffprobe. Codec, resolution, bitrate.",
     incantation: "> inspect input.mkv",
@@ -32,7 +31,6 @@ const FEATURES = [
   {
     rune: "ᚷ",
     heading: "TRIM",
-    badge: "COMING SOON",
     description:
       "Cut, crop, rotate, resize, speed up, slow down. All the fundamentals.",
     incantation:
