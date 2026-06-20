@@ -112,9 +112,6 @@ export default function FeaturesSection() {
                 className={styles.cardHeading}
                 hover
               />
-              {feature.badge && (
-                <span className={styles.badge}>{feature.badge}</span>
-              )}
             </div>
             <p className={styles.cardDescription}>
               {feature.description}

@@ -3,6 +3,7 @@ import AboutSection from "@/components/AboutSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import ForgeSection from "@/components/ForgeSection";
 import AlchemySection from "@/components/AlchemySection";
+import WatchSection from "@/components/WatchSection";
 import DownloadSection from "@/components/DownloadSection";
 import FooterSection from "@/components/FooterSection";
 import StickyNav from "@/components/StickyNav";
@@ -22,6 +23,7 @@ export default async function Home() {
         <FeaturesSection />
         <ForgeSection />
         <AlchemySection />
+        <WatchSection />
         <DownloadSection release={release} />
         <FooterSection />
       </main>
