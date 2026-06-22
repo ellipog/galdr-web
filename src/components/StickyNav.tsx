@@ -7,6 +7,7 @@ const LINKS = [
   { label: "ABOUT", href: "#about" },
   { label: "SPELLS", href: "#spells" },
   { label: "FORGE", href: "#forge" },
+  { label: "SUBTITLES", href: "#subtitles" },
   { label: "WATCH", href: "#watch" },
   { label: "DOWNLOAD", href: "#download" },
 ];

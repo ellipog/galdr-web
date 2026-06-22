@@ -11,22 +11,22 @@ const FEATURES = [
     rune: "ᚲ",
     heading: "CONVERT",
     description:
-      "Single or batch conversion between any formats FFmpeg supports.",
+      "Convert between any formats FFmpeg supports. Toggle batch mode to process multiple files at once.",
     incantation: "> convert *.mp4 --to mkv",
   },
   {
     rune: "ᛏ",
     heading: "COMPRESS",
     description:
-      "Quality-controlled compression with live size estimation.",
+      "Quality-controlled compression with live size estimation. Batch mode included.",
     incantation: "> compress input.mp4 --quality 60",
   },
   {
-    rune: "ᚨ",
-    heading: "INSPECT",
+    rune: "ᛁ",
+    heading: "QUEUE",
     description:
-      "Deep media inspection via ffprobe. Codec, resolution, bitrate.",
-    incantation: "> inspect input.mkv",
+      "Long-running jobs run in the background. A queue dropdown in the title bar lets you monitor and manage them.",
+    incantation: "> queue --status",
   },
   {
     rune: "ᚷ",
@@ -40,8 +40,8 @@ const FEATURES = [
     rune: "ᚠ",
     heading: "RUNE TAGS",
     description:
-      "Save presets as named runes. Reusable incantations.",
-    incantation: "> rune-save ᛏ youtube-h264",
+      "New rune presets for common jobs. Runes on convert and compress pages. Import and export presets between machines.",
+    incantation: "> rune-export presets.json",
   },
   {
     rune: "ᛟ",
