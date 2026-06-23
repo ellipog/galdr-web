@@ -54,87 +54,8 @@
   font-size: 14px;
 }
 
-.timeline {
-  margin-top: 32px;
-  background: var(--bg-dim);
-  border: var(--border);
-  padding: 20px 24px;
-}
-
-.track {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.track:last-of-type {
-  margin-bottom: 0;
-}
-
-.trackLabel {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--fg-dim);
-  width: 48px;
-  flex-shrink: 0;
-}
-
-.trackBar {
-  flex: 1;
-  height: 24px;
-  display: flex;
-  background: var(--bg);
-  border: 1px solid var(--fg-faint);
-}
-
-.clip {
-  height: 100%;
-  background: var(--fg);
-  opacity: 0.2;
-}
-
-.clipAlt {
-  height: 100%;
-  background: var(--fg);
-  opacity: 0.12;
-}
-
-.gap {
-  height: 100%;
-}
-
-.timebar {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 6px;
-  padding-left: 60px;
-  font-size: 10px;
-  color: var(--fg-faint);
-  letter-spacing: 0.05em;
-}
-
 @media (max-width: 768px) {
   .heading {
     font-size: 1.25rem;
-  }
-
-  .timeline {
-    padding: 16px;
-  }
-
-  .track {
-    gap: 8px;
-  }
-
-  .trackLabel {
-    width: 40px;
-    font-size: 9px;
-  }
-
-  .timebar {
-    padding-left: 48px;
-    font-size: 9px;
   }
 }

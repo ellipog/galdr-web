@@ -4,12 +4,13 @@ import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion
 import styles from "./StickyNav.module.css";
 
 const LINKS = [
-  { label: "ABOUT", href: "#about" },
-  { label: "SPELLS", href: "#spells" },
-  { label: "FORGE", href: "#forge" },
-  { label: "SUBTITLES", href: "#subtitles" },
-  { label: "WATCH", href: "#watch" },
-  { label: "DOWNLOAD", href: "#download" },
+  { label: "ABOUT", href: "/#about" },
+  { label: "SPELLS", href: "/#spells" },
+  { label: "FORGE", href: "/#forge" },
+  { label: "SUBTITLES", href: "/#subtitles" },
+  { label: "WATCH", href: "/#watch" },
+  { label: "DOWNLOAD", href: "/#download" },
+  { label: "CHANGELOG", href: "/changelog" },
 ];
 
 export default function StickyNav() {

@@ -61,6 +61,8 @@ export default function DownloadSection({ release }: Props) {
     <DownloadSectionClient
       tagName={release.tag_name}
       platforms={getPlatforms(release)}
+      releaseBody={release.body}
+      releaseUrl={release.html_url}
     />
   );
 }

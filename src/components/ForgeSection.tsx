@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import ScrambleText from "./ScrambleText";
+import ForgeDemo from "./ForgeDemo";
 import styles from "./ForgeSection.module.css";
 
 const FEATURES = [
@@ -59,37 +60,7 @@ export default function ForgeSection() {
           ))}
         </div>
       </div>
-      <div className={styles.timeline} aria-hidden="true">
-        <div className={styles.track}>
-          <span className={styles.trackLabel}>VIDEO</span>
-          <div className={styles.trackBar}>
-            <div className={styles.clip} style={{ width: "28%" }} />
-            <div className={styles.gap} style={{ width: "8%" }} />
-            <div className={styles.clip} style={{ width: "22%" }} />
-            <div className={styles.gap} style={{ width: "12%" }} />
-            <div className={styles.clip} style={{ width: "18%" }} />
-            <div className={styles.gap} style={{ width: "12%" }} />
-          </div>
-        </div>
-        <div className={styles.track}>
-          <span className={styles.trackLabel}>AUDIO</span>
-          <div className={styles.trackBar}>
-            <div className={styles.clipAlt} style={{ width: "12%" }} />
-            <div className={styles.gap} style={{ width: "4%" }} />
-            <div className={styles.clipAlt} style={{ width: "36%" }} />
-            <div className={styles.gap} style={{ width: "8%" }} />
-            <div className={styles.clipAlt} style={{ width: "14%" }} />
-            <div className={styles.gap} style={{ width: "26%" }} />
-          </div>
-        </div>
-        <div className={styles.timebar}>
-          <span>00:00</span>
-          <span>00:10</span>
-          <span>00:20</span>
-          <span>00:30</span>
-          <span>00:40</span>
-        </div>
-      </div>
+      <ForgeDemo />
     </motion.section>
   );
 }
