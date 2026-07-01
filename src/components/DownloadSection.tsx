@@ -7,17 +7,17 @@ interface Props {
 
 function getPlatforms(release: Release) {
   const version = release.tag_name.replace(/^v/i, "");
-  
+
   // Helper to find best asset: prioritize version match, then pattern match
   const findBestAsset = (patterns: string[]) => {
     const matches = release.assets.filter((a) =>
       patterns.some((p) => a.name.toLowerCase().includes(p))
     );
-    
+
     // 1. Try to find asset containing version string
     const versionMatch = matches.find((a) => a.name.includes(version));
     if (versionMatch) return versionMatch;
-    
+
     // 2. Otherwise return the first match (or sort by name descending to get newest)
     return matches.sort((a, b) => b.name.localeCompare(a.name))[0];
   };
@@ -45,7 +45,7 @@ export default function DownloadSection({ release }: Props) {
         <div style={{ textAlign: "center", padding: "64px 16px" }}>
           <p>
             <a
-              href="https://github.com/ellipog/galdr/releases/latest"
+              href="https://github.com/Aaen-Studios/galdr/releases/latest"
               target="_blank"
               rel="noopener noreferrer"
             >

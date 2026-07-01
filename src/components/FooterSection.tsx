@@ -33,16 +33,16 @@ export default function FooterSection() {
         <p>Built with Tauri, React, and Rust</p>
         <p>
           <a
-            href="https://github.com/ellipog/galdr"
+            href="https://github.com/Aaen-Studios/galdr"
             target="_blank"
             rel="noopener noreferrer"
           >
-            github.com/ellipog/galdr
+            github.com/Aaen-Studios/galdr
           </a>
         </p>
       </div>
       <p className={styles.copyright}>
-        &copy; 2026 Elliot. All rights reserved.
+        &copy; 2026 Aaenz. All rights reserved.
       </p>
     </motion.footer>
   );

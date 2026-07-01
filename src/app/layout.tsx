@@ -46,7 +46,7 @@ export default function RootLayout({
                 "A desktop GUI wrapper around FFmpeg for converting and manipulating media files.",
               url: "https://galdr.app",
               downloadUrl:
-                "https://github.com/ellipog/galdr/releases/latest",
+                "https://github.com/Aaen-Studios/galdr/releases/latest",
             }),
           }}
         />

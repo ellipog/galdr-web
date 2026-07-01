@@ -67,7 +67,7 @@ export default function HeroSection({ version }: Props) {
             <span className={styles.versionBadge}>v{version}</span>
           )}
           <a
-            href="https://github.com/ellipog/galdr"
+            href="https://github.com/Aaen-Studios/galdr"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.githubLink}
@@ -105,7 +105,7 @@ export default function HeroSection({ version }: Props) {
       <div className={styles.actions}>
         <Button href="#download">ᚷ DOWNLOAD</Button>
         <a
-          href="https://github.com/ellipog/galdr"
+          href="https://github.com/Aaen-Studios/galdr"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.githubLink}

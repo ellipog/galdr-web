@@ -97,7 +97,7 @@ export default function ChangelogSection({ initialReleases }: Props) {
           <p>No releases found.</p>
           <p>
             <a
-              href="https://github.com/ellipog/galdr/releases"
+              href="https://github.com/Aaen-Studios/galdr/releases"
               target="_blank"
               rel="noopener noreferrer"
             >
